@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c719e4f2-f138-4013-9a30-9472f8d1b106" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/default.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/static_pages/about.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/static_pages/help.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/static_pages/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="c719e4f2-f138-4013-9a30-9472f8d1b106" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +224,7 @@
       <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="1097" />
     <option name="width" value="1451" />
     <option name="height" value="1047" />
@@ -344,15 +335,15 @@
       <option name="presentableId" value="Default" />
       <updated>1545637484166</updated>
       <workItem from="1545637485462" duration="877000" />
-      <workItem from="1545638393233" duration="3932000" />
+      <workItem from="1545638393233" duration="4390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4809000" />
+    <option name="totallyTimeSpent" value="5267000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1097" y="0" width="1451" height="1047" extended-state="0" />
+    <frame x="1097" y="0" width="1451" height="1047" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2538071" />

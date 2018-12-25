@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c719e4f2-f138-4013-9a30-9472f8d1b106" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +42,7 @@
           <entry key="Blade" value="471" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="10" />
-          <entry key="PHP" value="674" />
+          <entry key="PHP" value="676" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="SCSS" value="39" />
         </counts>
@@ -88,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/helpers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+            <state relative-caret-position="294">
+              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -97,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1092">
-              <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+            <state relative-caret-position="420">
+              <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -305,7 +298,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1097" />
+    <option name="x" value="1155" />
     <option name="width" value="1451" />
     <option name="height" value="1047" />
   </component>
@@ -508,10 +501,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29242000" />
+    <option name="totallyTimeSpent" value="29795000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1097" y="0" width="1451" height="1047" extended-state="0" />
+    <frame x="1155" y="0" width="1451" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2342277" />
@@ -761,13 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -775,10 +761,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        <state relative-caret-position="294">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
         </state>
       </provider>
     </entry>

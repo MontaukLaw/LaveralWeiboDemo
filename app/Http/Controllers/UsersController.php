@@ -19,7 +19,8 @@ class UsersController extends Controller
 
     public function index()
     {
-        return view('users.all', compact('user'));
+        $users = User::all();
+        return view('users.all', compact('users'));
     }
 
     public function store(Request $request)
@@ -29,6 +30,14 @@ class UsersController extends Controller
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|confirmed|min:6'
         ]);
-        return;
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+
+        session()->flash('success', '欢迎您, '.$user->name.' ,您将在这里开启一段新的旅程~');
+        return redirect()->route('users.show', [$user]);
     }
 }

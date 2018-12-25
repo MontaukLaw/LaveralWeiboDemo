@@ -21,4 +21,9 @@ class UsersController extends Controller
     {
         return view('users.all', compact('user'));
     }
+
+    public function store(User $user)
+    {
+
+    }
 }

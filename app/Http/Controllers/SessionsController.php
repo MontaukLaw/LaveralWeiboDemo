@@ -7,6 +7,13 @@ use Auth;
 
 class SessionsController extends Controller
 {
+    //只能让guest访问登陆页面, 即已经登陆过的用户不能再登陆了.
+    public function __construct()
+    {
+        $this->middleware('guest', [
+            'only' => ['create']
+        ]);
+    }
     //goto登陆页面
     public function create()
     {
@@ -24,7 +31,10 @@ class SessionsController extends Controller
         if (Auth::attempt($credentials,$request->has('remember'))) {
             // 登录成功后的相关操作
             session()->flash('success', '欢迎回来！');
-            return redirect()->route('users.show', [Auth::user()]);
+            //登陆成功之后, 如果之前是被踢出去的, 可以intend继续之前的访问地址去访问.
+            $fallback = route('users.show', Auth::user());
+            return redirect()->intended($fallback);
+            //return redirect()->route('users.show', [Auth::user()]);
         } else {
             // 登录失败后的相关操作
             session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');

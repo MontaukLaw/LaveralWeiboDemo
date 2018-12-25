@@ -12,7 +12,6 @@ function get_db_config()
         $url = parse_url(getenv("DATABASE_URL"));
 
         return $db_config = [
-            'driver' => 'pgsql',
             'host' => $url["host"],
             'port' => $url["port"],
             'database' => ltrim($url["path"], "/"),

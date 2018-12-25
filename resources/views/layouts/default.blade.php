@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="csrf-token" content="xxxx"/>
+
     <title>@yield('title','Weibo App')</title>
     {{--<link rel="stylesheet" href="/css/app.css">--}}
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -14,5 +16,9 @@
         @include('layouts._footer')
     </div>
 </div>
+<div id="app">
+
+</div>
+<script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

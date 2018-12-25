@@ -27,3 +27,7 @@ Route::get('signup', 'UsersController@create')->name('signup');
 Route::resource('users','UsersController');
 
 //Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+//看字面意思, 一个是显示登陆页面, 一个是登入, 一个是登出
+Route::get('login', 'SessionsController@create')->name('login');
+Route::post('login', 'SessionsController@store')->name('login');
+Route::delete('logout', 'SessionsController@destroy')->name('logout');

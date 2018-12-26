@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
 use Mail;
+use Log;
 
 class UsersController extends Controller
 {
@@ -15,7 +16,7 @@ class UsersController extends Controller
         $this->middleware('auth', [
             //除了下面这些方法, 其他都需要登陆auth才能操作
             //加入confirm, 因为confirm也是需要不登陆也能操作的
-            'except' => ['show', 'create', 'store','index','confirmEmail']
+            'except' => ['show', 'create', 'store', 'index', 'confirmEmail','getConfirm']
         ]);
 
         $this->middleware('guest', [
@@ -36,13 +37,35 @@ class UsersController extends Controller
     //基本上, controller里面的function name跟view的名字是一样的
     public function index()
     {
-        $users=User::paginate(10);
+        $users = User::paginate(10);
         //$users = User::all();
         return view('users.index', compact('users'));
     }
 
+    //这个方法1. 让我知道log怎么用, 2. 知道了view的文件名没有blade后缀, 就不会被渲染.
+    public function getConfirm(Request $request)
+    {
+        //Log::debug('getConfirm');
+        $this->validate($request, [
+            'name' => 'required|max:50',
+            'email' => 'required|email|unique:users|max:255',
+            'password' => 'required|confirmed|min:6'
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+
+        Log::debug('name: '.$user->name."/email: ".$user->email);
+
+        return view('emails.confirm', compact('user'));
+    }
+
     public function store(Request $request)
     {
+        //Log::debug('store_bak');
         $this->validate($request, [
             'name' => 'required|max:50',
             'email' => 'required|email|unique:users|max:255',
@@ -106,13 +129,11 @@ class UsersController extends Controller
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = 'summer@example.com';
-        $name = 'Summer';
         $to = $user->email;
         $subject = "感谢注册 Weibo 应用！请确认你的邮箱。";
 
-        Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject) {
-            $message->from($from, $name)->to($to)->subject($subject);
+        Mail::send($view, $data, function ($message) use ($to, $subject) {
+            $message->to($to)->subject($subject);
         });
     }
 

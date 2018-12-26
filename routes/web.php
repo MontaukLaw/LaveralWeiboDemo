@@ -26,6 +26,9 @@ Route::get('signup', 'UsersController@create')->name('signup');
 //相当于 get:index,get:create,get:show,post:store,patch:update,delete:destroy
 Route::resource('users','UsersController');
 
+//getConfirm
+//Route::post('get_confirm','UsersController@getConfirm')->name('get_confirm');
+
 //Route::get('/users/{user}', 'UsersController@show')->name('users.show');
 //看字面意思, 一个是显示登陆页面, 一个是登入, 一个是登出
 Route::get('login', 'SessionsController@create')->name('login');

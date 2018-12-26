@@ -10,7 +10,9 @@ class UsersController extends Controller
 {
     public function __construct()
     {
+        //中间件类似于切面
         $this->middleware('auth', [
+            //除了下面这些方法, 其他都需要登陆auth才能操作
             'except' => ['show', 'create', 'store','index']
         ]);
 
@@ -82,4 +84,13 @@ class UsersController extends Controller
         return redirect()->route('users.show', $user);
     }
 
+    public function destroy(User $user)
+    {
+        //先对user授权
+        $this->authorize('destroy', $user);
+        $user->delete();
+        //往前台flash消息
+        session()->flash('success', '成功删除用户！');
+        return back();
+    }
 }

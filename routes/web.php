@@ -31,3 +31,7 @@ Route::resource('users','UsersController');
 Route::get('login', 'SessionsController@create')->name('login');
 Route::post('login', 'SessionsController@store')->name('login');
 Route::delete('logout', 'SessionsController@destroy')->name('logout');
+
+//这个路由有个通配符或者说正则, 将token传到UsersController的confirmEmail这个function处理
+//http://weibo.test/signup/confirm/O1TTEr3faVq4fpzFXaOVQD4EAO9mQL
+Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');

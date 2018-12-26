@@ -13,12 +13,15 @@ use Faker\Generator as Faker;
 |
 */
 
+//伪造数据以及填充数据的方法是: php artisan migrate:refresh --seed
+
 $factory->define(App\Models\User::class, function (Faker $faker) {
     $date_time = $faker->date . ' ' . $faker->time;
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
+        'activated' => true,
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
         'remember_token' => str_random(10),
         'created_at' => $date_time,

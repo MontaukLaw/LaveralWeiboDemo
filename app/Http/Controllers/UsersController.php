@@ -11,7 +11,7 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'except' => ['show', 'create', 'store']
+            'except' => ['show', 'create', 'store','index']
         ]);
 
         $this->middleware('guest', [
@@ -29,10 +29,12 @@ class UsersController extends Controller
         return view('users.show', compact('user'));
     }
 
+    //基本上, controller里面的function name跟view的名字是一样的
     public function index()
     {
-        $users = User::all();
-        return view('users.all', compact('users'));
+        $users=User::paginate(10);
+        //$users = User::all();
+        return view('users.index', compact('users'));
     }
 
     public function store(Request $request)

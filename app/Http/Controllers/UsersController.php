@@ -16,7 +16,7 @@ class UsersController extends Controller
         $this->middleware('auth', [
             //除了下面这些方法, 其他都需要登陆auth才能操作
             //加入confirm, 因为confirm也是需要不登陆也能操作的
-            'except' => ['show', 'create', 'store', 'index', 'confirmEmail','getConfirm']
+            'except' => ['show', 'create', 'store', 'index', 'confirmEmail', 'getConfirm']
         ]);
 
         $this->middleware('guest', [
@@ -31,7 +31,13 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        //改成不仅搜索user, 还搜索user发的所有帖子.
+        //然后传参的时候, 传两个,
+        $statuses = $user->statuses()
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+        return view('users.show', compact('user', 'statuses'));
+        //return view('users.show', compact('user'));
     }
 
     //基本上, controller里面的function name跟view的名字是一样的
@@ -58,7 +64,7 @@ class UsersController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        Log::debug('name: '.$user->name."/email: ".$user->email);
+        Log::debug('name: ' . $user->name . "/email: " . $user->email);
 
         return view('emails.confirm', compact('user'));
     }

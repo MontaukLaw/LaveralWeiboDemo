@@ -35,3 +35,12 @@ Route::delete('logout', 'SessionsController@destroy')->name('logout');
 //这个路由有个通配符或者说正则, 将token传到UsersController的confirmEmail这个function处理
 //http://weibo.test/signup/confirm/O1TTEr3faVq4fpzFXaOVQD4EAO9mQL
 Route::get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
+
+//忘记密码页面, 这个路由链接一般在哪儿呢? 当然是登陆页面
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+//发送link email
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+//密码更新页面
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+//更新密码
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');

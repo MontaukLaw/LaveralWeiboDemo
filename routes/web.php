@@ -54,3 +54,9 @@ Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy'
 //显示粉丝跟你粉的人数
 Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');
 Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');
+
+//创建follower, 即关注别人, 控制器指向Follower
+Route::post('/users/followers/{user}', 'FollowersController@store')->name('followers.store');
+
+//取关
+Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('followers.destroy');

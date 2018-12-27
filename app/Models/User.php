@@ -48,11 +48,15 @@ class User extends Authenticatable
         return $this->hasMany(Status::class);
     }
 
-    //
+    //原本返回自己的微博, 现在要改成显示自己关注的人的微博
     public function feed()
     {
-        return $this->statuses()
+        $user_ids = $this->followings->pluck('id')->toArray();
+        array_push($user_ids, $this->id);
+        return Status::whereIn('user_id', $user_ids)
+            ->with('user')
             ->orderBy('created_at', 'desc');
+        //return $this->statuses()->orderBy('created_at', 'desc');
     }
 
     //查看谁关注了你

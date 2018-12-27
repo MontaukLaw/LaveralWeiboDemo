@@ -10,7 +10,8 @@
         {{ $status->content }}
     </div>
     @can('destroy', $status)
-        <form action="{{ route('statuses.destroy', $status->id) }}" method="POST">
+        {{--onsubmit用来submit的时候做确认, 是js的方法--}}
+        <form action="{{ route('statuses.destroy', $status->id) }}" method="POST"  onsubmit="return confirm('您确定要删除本条微博吗？');">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
             <button type="submit" class="btn btn-sm btn-danger">删除</button>
